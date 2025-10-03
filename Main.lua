@@ -1,4 +1,6 @@
-
+-- This is a LocalScript that should be placed in StarterPlayerScripts or inside the ScreenGui.
+-- Creates a GUI with initial animation text, then two tabs: Scripts and Others.
+-- Drag functionality, toggle key (E), kill button in Others.
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
@@ -128,7 +130,7 @@ fadeInTween.Completed:Connect(function()
         switchTab(tabButtons["Scripts"], scriptsContent)
     end)
 end)
--- Scripts tab: Space Incremental button
+-- Scripts tab: Space Incremental button (closes GUI after click)
 local spaceIncButton = Instance.new("TextButton")
 spaceIncButton.Size = UDim2.new(0.8, 0, 0, 40)
 spaceIncButton.Position = UDim2.new(0.1, 0, 0, 10)
@@ -143,6 +145,7 @@ local spaceIncCorner = Instance.new("UICorner", spaceIncButton)
 spaceIncCorner.CornerRadius = UDim.new(0, 5)
 spaceIncButton.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Olukt/Space-Incremental-/refs/heads/main/Space%20Inc.lua"))()
+    screenGui:Destroy()  -- Close GUI after executing the script
 end)
 -- Others tab buttons
 -- Dex++ button
