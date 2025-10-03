@@ -178,7 +178,7 @@ infYieldButton.Parent = othersContent
 local infYieldCorner = Instance.new("UICorner", infYieldButton)
 infYieldCorner.CornerRadius = UDim.new(0, 5)
 infYieldButton.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Infinite-Yield-Free-55471"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source"))()
 end)
 -- Checker button
 local checkerButton = Instance.new("TextButton")
